@@ -8,7 +8,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <?php 
   require_once __DIR__ . '/class/Movie.php';
-  $titanic = new Movie('Titanic', ['Drama','Fantascientifico'],'ENG');
+  $titanic = new Movie('Titanic', ['drammatico', 'sentimentale', 'storico', 'catastrofico'],'ENG');
+  $nightmare_before_christmas = new Movie('Nightmare Before Christmas', ['animazione', 'fantastico', 'musicale', 'grottesco'],'ENG');
   ?>
   <title>Document</title>
 </head>
@@ -20,7 +21,17 @@
     <li>  
       <h2><?php echo $titanic->getName() ?></h2>
       <ul>
+        <li>Generi:</li>
         <?php foreach ($titanic->getGenre() as $genre) : ?>
+          <li><?php echo $genre ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </li>
+    <li>  
+      <h2><?php echo $nightmare_before_christmas->getName() ?></h2>
+      <ul>
+        <li>Generi:</li>
+        <?php foreach ($nightmare_before_christmas->getGenre() as $genre) : ?>
           <li><?php echo $genre ?></li>
         <?php endforeach; ?>
       </ul>
